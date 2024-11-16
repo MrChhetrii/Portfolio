@@ -1,0 +1,624 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+section .container{
+  width: 100%;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+section .container h1{
+  font-family: Papyrus;
+  font-size: 35px;
+  color: #fff;
+}
+section .container h1 span{
+  color: #ff004f;
+}
+section nav ul{
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+section nav ul li a{
+  text-decoration: none;
+  justify-content: space-evenly;
+  margin-left: 40px;
+  font-size: 18px;
+  transition:  color 0.3s ease-in;
+  font-family: Papyrus;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s ease-in, border-bottom 0.3s ease-in;
+}
+section nav ul li a:hover{
+  color: #ff004f;
+  border-bottom: 2px solid #ff004f;
+}
+
+@media (max-width: 768px) {
+  section .container {
+      height: 65px;
+      justify-content: space-between; 
+      padding: 0px 20px;
+  }
+
+  section .container h1 {
+      font-size: 25px;
+  }
+
+  section nav ul li a {
+      margin-left: 15px;
+      font-size: 16px; 
+  }
+}
+
+section .middle-part{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color:black;
+  height: 100vh;
+}
+section .middle-part p{
+  font-size: 40px;
+  width: 400px;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+}
+section .middle-part p span{
+  color: #ff004f;
+
+}
+section .middle-part .left-part{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section .middle-part .left-part .icons{
+  font-size: 25px;
+  margin-top: 25px;
+}
+section .middle-part .left-part .icons i{
+  color: white;
+  margin-right: 20px;
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+section .middle-part .left-part .icons i:hover{
+  opacity: 1;
+}
+
+section .middle-part .ownImage{
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+section .middle-part .ownImage img{
+  height: 400px;
+  width: 400px;
+  background: transparent;
+  border: 5px solid #ff004f;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media(max-width:768px){
+  section .middle-part{
+    padding: 0px 20px;
+  }
+  section .middle-part p{
+    font-size: 25px;
+    width: 250px;
+  }
+
+  section .middle-part .ownImage{
+    height: 300px;
+    width: 300px;   
+    border-radius: 50%;
+    box-shadow: 0 0 10px;
+    overflow: hidden;
+  }
+  section .middle-part .ownImage img{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+/* About section Starts */
+section .about{
+  background-color: black;
+  width: 100%;
+}
+.about-part{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 0px 30px;
+}
+section .about .left-part{
+  height: 450px;
+  flex:1;
+}
+
+section .about .left-part img{
+  height: 100%;
+  object-fit: cover;
+  margin-left: 30px;
+}
+
+section .about .right-part {
+  color: #fff;
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+section .about .right-part h2{
+  font-size: 50px;
+}
+section .about .right-part p{
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+section .about .right-part .tab-titles{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+}
+section .about .right-part .tab-titles{
+  margin-top: 40px;
+  transition:  border-bottom 0.3s ease-in;
+}
+section .about .right-part .tab-links{
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  /* border-bottom: 4px solid transparent; */
+}
+section .about .right-part .tab-titles p:hover{
+  border-bottom: 2px  solid #ff004f;
+  cursor: pointer;
+}
+
+
+section .about .right-part .tab-contents{
+  margin-top: 20px;
+  font-size: 22px;
+}
+.tab-links.active-link {
+  color: #ff004f; 
+  border-bottom: 4px solid #ff004f; 
+}
+section .about .right-part .tab-contents ul{
+  list-style: none;
+}
+section .about .right-part .tab-contents ul li span{
+  color: #ff004f;
+}
+section .about .right-part .tab-contents ul li{
+  margin-bottom: 20px;
+}
+section .tab-contents{
+  display: none;
+}
+section .active-tab{
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .about-part {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    padding: 0px 20px; /* Adjust padding for smaller screens */
+  }
+
+  section .about .left-part {
+    height: auto; /* Allow height to adjust based on content */
+    margin-bottom: 20px; /* Space between image and content */
+  }
+
+  section .about .left-part img {
+    height: auto; /* Allow image to adjust height */
+    margin-left: 0; /* Remove left margin on smaller screens */
+    width: 100%;
+  }
+
+  section .about .right-part {
+    width: 100%; /* Ensure right part takes full width */
+  }
+
+  section .about .right-part h2 {
+    font-size: 36px; /* Adjust font size for smaller screens */
+  }
+
+  section .about .right-part p {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  section .about .right-part .tab-titles {
+    flex-direction: column; /* Stack tab titles vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  section .about .right-part .tab-links {
+    padding: 8px 0; /* Adjust padding for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  section .about .right-part .tab-contents {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+}
+
+
+/* service section start */
+
+section .service{
+  width: 100%;
+  background-color: black;
+  padding-top:50px;
+  
+}
+section .service h2{
+  text-align: center;
+  font-size: 50px;
+  color: #fff;
+}
+section .services{
+  display: grid;
+  color: white;
+  grid-template-columns: 1fr 1fr;
+  width: 600px;
+  margin: auto;
+  gap: 50px;
+  margin-top: 60px;
+}
+section .services-head{
+  display: flex;
+  align-items: center;
+}
+section .services-head i{
+  font-size: 20px;
+  color: orange;
+  width: 35px;
+}
+section .services-all h3{
+  font-size: 25px;
+  
+}
+section .services-all{
+  width: 280px;
+  color: #fff;
+  background-color: rgb(55, 53, 53);
+  padding: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+section .services-all p{
+  font-size: 20px;
+}
+
+section .services-all:hover{
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  section .services{
+    display: grid;
+    color: white;
+    grid-template-columns: 1fr 1fr;
+    width: 550px;
+    margin: auto;
+    gap: 30px;
+    margin-top: 60px;
+  }
+  section .services-all{
+    width: 250px;
+    color: #fff;
+    background-color: rgb(55, 53, 53);
+    padding: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+  section .services-all p{
+    font-size: 18px;
+  }
+}
+
+
+/* my work section start */
+
+section .works{
+  width: 100%;
+  background-color: black;
+  padding: 70px;
+}
+section .works h2{
+  font-size: 50px;
+  color: #fff;
+  margin-bottom:50px;
+  margin-left: 110px;
+}
+section .myWork{
+  color: white;
+  width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+section .myWork .layer{
+  width: 420px;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+section .myWork img{
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+section .textMyWork h3{
+  font-size: 20px;
+}
+section .textMyWork p{
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+section .textMyWork{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  text-align: justify;
+}
+section .textMyWork:hover{
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+@media (max-width: 768px) {
+  section .works {
+    padding: 30px; /* Reduced padding for smaller screens */
+  }
+
+  section .works h2 {
+    font-size: 36px; /* Adjust font size for better readability on smaller screens */
+    margin-left: 0; /* Remove left margin for better alignment */
+    text-align: center; /* Center align the heading */
+  }
+
+  section .myWork {
+    width: 100%; /* Make the grid container take full width */
+    grid-template-columns: 1fr; /* Stack the items in a single column */
+    gap: 20px; /* Reduce gap between items for smaller screens */
+  }
+
+  section .myWork .layer {
+    width: 100%; /* Full width for the layers */
+    height: auto; /* Maintain aspect ratio and adjust height accordingly */
+  }
+
+  section .myWork img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    border-radius: 8px; /* Slightly reduced border-radius */
+  }
+
+  section .textMyWork {
+    padding: 20px; /* Reduced padding for better fit on smaller screens */
+    font-size: 14px; /* Smaller font size for better readability */
+    text-align: center; /* Center text alignment for consistency */
+  }
+
+  section .textMyWork h3 {
+    font-size: 18px; /* Adjust heading font size */
+  }
+
+  section .textMyWork p {
+    font-size: 14px; /* Adjust paragraph font size */
+    line-height: 18px; /* Adjust line height for readability */
+  }
+}
+
+/* contact us starts */
+.contactus{
+  height: 100vh;
+  background-color: black;
+  color: #fff;
+  padding-top: 40px;
+
+}
+.contactus .contact{
+  display: flex;
+  justify-content: space-around;
+}
+section .contact .contact-left h2{
+  font-size: 50px;
+}
+section .contact .contact-left p{
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+section .social-icon{
+  display: flex;
+  font-size: 30px;
+  align-items: center;
+}
+section .social-icon i{
+  color: white;
+  margin-top: 30px;
+  margin-right: 25px;
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+}
+section .social-icon i:hover{
+  opacity: 1;
+}
+section .contact-left button {
+  background-color: #ff004f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+section .contact-left p i {
+  color: #ff004f;
+  width: 50px;
+  font-size: 30px;
+}
+
+section .contact-right {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+section .contact-right input,
+section .contact-right textarea {
+  width: 100%;
+  padding: 20px;
+  margin: 10px 30px;
+  opacity: 0.4; 
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  box-sizing: border-box; 
+  transition: opacity 0.3s ease-in-out;
+}
+.contact-right button{
+  padding: 10px 20px;
+  color: white;
+  background-color: #ff004f;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 18px 30px;
+  transition: background-color 0.3s ease;
+}
+.contact-right button:hover {
+  background-color: #e60043;
+}
+
+.contactus {
+  height: auto; /* Allow height to adjust to content */
+  padding: 20px 10px; /* Adjust padding for better fit */
+}
+.success {
+  font-size: 16px;
+  display: none; 
+  margin-left: 25px;
+}
+.error{
+  font-size: 16px;
+  display: none;
+  margin-left: 25px;
+}
+
+@media (max-width: 768px) {
+.contactus .contact {
+  flex-direction: column; /* Stack contact elements vertically */
+  align-items: center; /* Center align the items */
+  gap: 20px; /* Space between contact sections */
+  padding: 20px;
+}
+
+section .contact .contact-left h2 {
+  font-size: 36px;
+}
+
+section .contact .contact-left p {
+  font-size: 16px; /* Adjust paragraph font size */
+  
+}
+
+section .social-icon {
+  margin-top: 14px; /* Add spacing above icons */
+}
+
+section .social-icon i {
+  font-size: 27px; /* Adjust icon size */
+  margin-right: 17px; /* Reduce space between icons */
+}
+
+section .contact-left button {
+  margin-top: 20px; /* Reduce top margin for button */
+  padding: 8px 16px; /* Adjust padding */
+  font-size: 16px; /* Adjust font size */
+}
+
+section .contact-right {
+  width: 100%; /* Full width for contact form */
+  padding: 0 20px; /* Add horizontal padding */
+}
+
+section .contact-right input,
+section .contact-right textarea {
+  margin: 10px 0; 
+  padding: 15px; 
+  font-size: 16px; 
+}
+
+.contact-right button {
+  padding: 10px 20px; 
+  font-size: 16px; 
+  margin-left: -3px;
+}
+.success {
+  font-size: 16px;
+  display: none; 
+  margin-left: -7px;
+}
+.error{
+  font-size: 16px;
+  display: none;
+  margin-left: -7px;
+}
+}
+
+
+
+
+
